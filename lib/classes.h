@@ -48,12 +48,25 @@ struct N {
 
 class Author {
 public:
-    Author() = default;
-    Author(int id, int media, const std::string& dni, const std::string& name)
-        : id(id), media(media), dni(dni), name(name) {}
+    Author();
+    Author(int id, int media, const std::string& dni, const std::string& name);
+        
 
     A to_struct() const;
     void from_struct(const A&);
+
+    int getId() const;
+    int getMedia() const;
+    std::string getDNI() const;
+    std::string getName() const;
+
+    
+    void setId(int);
+    void setMedia(int);
+    void setDNI(const std::string&);
+    void setName(const std::string&);
+
+
 
 private:
     int id, media;
@@ -62,9 +75,18 @@ private:
 
 class User {
 public:
-    User() = default;
-    User(int id, int age, const std::string& dni, const std::string& name)
-        : id(id), age(age), dni(dni), name(name) {}
+    User();
+    User(int id, int age, const std::string& dni, const std::string& name);
+
+    int getId() const;
+    int getAge() const;
+    std::string getDNI() const;
+    std::string getName() const;
+
+    void setId(int);
+    void setAge(int);
+    void setDNI(const std::string&);
+    void setName(const std::string&);
 
     U to_struct() const;
     void from_struct(const U&);
@@ -76,9 +98,18 @@ private:
 
 class Comment {
 public:
-    Comment() = default;
-    Comment(int id, int counter, int user, const std::string& str)
-        : id(id), counter(counter), user(user), str(str) {}
+    Comment();
+    Comment(int id, int counter, int user, const std::string& str);
+
+    int getId() const;
+    int getCounter() const;
+    int getUser() const;
+    std::string getStr() const;
+
+    void setId(int);
+    void setCounter(int);
+    void setUser(int);
+    void setStr(const std::string&);
 
     C to_struct() const;
     void from_struct(const C&);
@@ -89,11 +120,25 @@ private:
 
 class News {
 public:
-    News() = default;
+    News();
     News(int id, int day, int month, int year, int author,
-         const std::string& title, const std::string& detail)
-        : id(id), day(day), month(month), year(year),
-          author(author), title(title), detail(detail) {}
+         const std::string& title, const std::string& detail);
+
+    int getId() const;
+    int getDay() const;
+    int getMonth() const;
+    int getYear() const;
+    int getAuthor() const;
+    std::string getTitle() const;
+    std::string getDetail() const;
+
+    void setId(int);
+    void setDay(int);
+    void setMonth(int);
+    void setYear(int);
+    void setAuthor(int);
+    void setTitle(const std::string&);
+    void setDetail(const std::string&);
 
     N to_struct() const;
     void from_struct(const N&);
