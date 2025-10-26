@@ -1,6 +1,6 @@
 #include "classes.h"
 
-A to_struct() const {
+A Author::to_struct() const {
   A s{};
   s.id = id;
   s.media = media;
@@ -9,14 +9,14 @@ A to_struct() const {
   return s;
 }
 
-void from_struct(const A& s) {
+void Author::from_struct(const A& s) {
   id = s.id;
   media = s.media;
   dni = s.dni;
   name = s.name;
 }
 
-U to_struct() const {
+U User::to_struct() const {
   U s{};
   s.id = id;
   s.age = age;
@@ -25,14 +25,14 @@ U to_struct() const {
   return s;
 }
 
-void from_struct(const U& s) {
+void User::from_struct(const U& s) {
   id = s.id;
   age = s.age;
   dni = s.dni;
   name = s.name;
 }
 
-C to_struct() const {
+C Comment::to_struct() const {
   C s{};
   s.id = id;
   s.counter = counter;
@@ -41,14 +41,14 @@ C to_struct() const {
   return s;
 }
 
-void from_struct(const C& s) {
+void Comment::from_struct(const C& s) {
   id = s.id;
   counter = s.counter;
   user = s.user;
   str = s.str;
 }
 
-N to_struct() const {
+N News::to_struct() const {
   N s{};
   s.id = id;
   s.day = day;
@@ -60,7 +60,7 @@ N to_struct() const {
   return s;
 }
 
-void from_struct(const N& s) {
+void News::from_struct(const N& s) {
   id = s.id;
   day = s.day;
   month = s.month;

@@ -49,10 +49,10 @@ struct N {
 class Author {
 public:
     Author() = default;
-    Author(int id, const std::string& dni, const std::string& name, int media)
-        : id(id), dni(dni), name(name), media(media) {}
+    Author(int id, int media, const std::string& dni, const std::string& name)
+        : id(id), media(media), dni(dni), name(name) {}
 
-    A to_struct();
+    A to_struct() const;
     void from_struct(const A&);
 
 private:
@@ -63,10 +63,10 @@ private:
 class User {
 public:
     User() = default;
-    User(int id, const std::string& dni, const std::string& name, int age)
-        : id(id), dni(dni), name(name), age(age) {}
+    User(int id, int age, const std::string& dni, const std::string& name)
+        : id(id), age(age), dni(dni), name(name) {}
 
-    U to_struct();
+    U to_struct() const;
     void from_struct(const U&);
 
 private:
@@ -80,7 +80,7 @@ public:
     Comment(int id, int counter, int user, const std::string& str)
         : id(id), counter(counter), user(user), str(str) {}
 
-    C to_struct();
+    C to_struct() const;
     void from_struct(const C&);
 private:
     int id, counter, user;
@@ -95,7 +95,7 @@ public:
         : id(id), day(day), month(month), year(year),
           author(author), title(title), detail(detail) {}
 
-    N to_struct();
+    N to_struct() const;
     void from_struct(const N&);
 private:
     int id, day, month, year, author;
