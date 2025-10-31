@@ -2,55 +2,14 @@
 #define CLASSES_H
 
 #include <iostream>
-#include <fstream>
 #include <cstring>
-
-template <typename T>
-class Writer {
-public:
-    Writer(const char* filename) {
-        file.open(filename, std::ios::binary | std::ios::app);
-        if (!file.is_open()) throw std::runtime_error("No se pudo abrir el archivo");
-    }
-
-    ~Writer() { file.close(); }
-
-    void write(const T& data) {
-        file.write(reinterpret_cast<const char*>(&data), sizeof(T));
-    }
-
-private:
-    std::ofstream file;
-};
-
-struct A {
-    int id, media;
-    char dni[10];
-    char name[50];
-};
-
-struct U {
-    int id, age;
-    char dni[10];
-    char name[50];
-};
-
-struct C {
-    int id, counter, user;
-    char str[50];
-};
-
-struct N {
-    int id, day, month, year, author;
-    char title[50];
-    char detail[200];
-};
+#include <stdexcept>
+#include "structs.h"
 
 class Author {
 public:
     Author();
-    Author(int id, int media, const std::string& dni, const std::string& name);
-        
+    Author(int id, int media, const std::string& dni, const std::string& name); 
 
     A to_struct() const;
     void from_struct(const A&);

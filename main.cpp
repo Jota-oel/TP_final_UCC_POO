@@ -1,8 +1,7 @@
-#include "util.h"
+#include "Manager.h"
 
 int main()
 {
-  init();
   controller();
   
   return 0;
