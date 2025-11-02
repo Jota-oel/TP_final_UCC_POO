@@ -16,19 +16,20 @@ public:
     std::vector<User> users;
     std::vector<News> news;
     std::vector<Comment> comments;
-private:
-    Writer<Author> writer_author;
-    Writer<User> writer_user;
-    Writer<News> writer_news;
-    Writer<Comment> writer_comment;
-
-    Reader<Author> reader_author;
-    Reader<User> reader_user;
-    Reader<News> reader_news;
-    Reader<Comment> reader_comment;
+    Writer<A> writer_author;
+    Writer<U> writer_user;
+    Writer<N> writer_news;
+    Writer<C> writer_comment;
+    Reader<A> reader_author;
+    Reader<U> reader_user;
+    Reader<N> reader_news;
+    Reader<C> reader_comment;
+    void read_all();
 };
 
 extern Manager manager;
+
+extern std::string medias[4];
 
 extern int count_users;
 extern int count_authors;
@@ -45,12 +46,13 @@ bool id_author_exists(int id);
 void create_user();
 void create_author();
 void create_new();
-void create_comment();
+void create_comment(int);
 
 void show_users();
 void show_authors();
 void show_news();
 void show_new(int);
+void show_new_data(int);
 void show_comments(int);
 
 void show_news_by_author();
@@ -63,7 +65,6 @@ void controller();
 void c_author();
 void c_user();
 void c_new();
-
 
 #endif
 

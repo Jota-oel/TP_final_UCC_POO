@@ -58,22 +58,22 @@ private:
 class Comment {
 public:
     Comment();
-    Comment(int id, int counter, int user, const std::string& str);
+    Comment(int id, int news, int user, const std::string& str);
 
+    int getNew() const;
     int getId() const;
-    int getCounter() const;
     int getUser() const;
     std::string getStr() const;
 
+    void setNew(int);
     void setId(int);
-    void setCounter(int);
     void setUser(int);
     void setStr(const std::string&);
 
     C to_struct() const;
     void from_struct(const C&);
 private:
-    int id, counter, user;
+    int id, user, news;
     std::string str;
 };
 

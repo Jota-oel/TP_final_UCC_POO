@@ -11,7 +11,7 @@ struct U {
 };
 
 struct C {
-    int id, counter, user;
+    int id, news, user;
     char str[50];
 };
 
